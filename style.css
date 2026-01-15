@@ -1,0 +1,206 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: #ffffff;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  background: white;
+  z-index: 10;
+}
+
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(5, 5, 5);
+  font-weight: 300;
+  padding: .25rem 0;
+  transition: opacity 0.4s ease;
+  }
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: rgb(0, 0, 0);
+
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.navbar a:hover {
+  opacity: 0.5;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  background-image: url("assets/BG.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  
+  padding-right: 5%;
+  position: relative;
+}
+.name span {
+  display: block;
+}
+
+.name {
+  line-height: 0.9;
+}
+
+.first-name {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 120;
+}
+
+.last-name {
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  font-weight: 700;
+}
+
+.tag {
+  font-size:clamp(1rem, 2vw, 3.5rem);
+  font-weight: 100;
+  margin-top: .5rem;
+  letter-spacing: 0.3rem;
+  line-height: 1.3rem;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Hero text above overlay */
+.hero h1,.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4rem;
+}
+
+/* General sections */
+.section {
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  color: #111;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+
+#about h2 {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  gap: 5rem; 
+  font-size: 1.2rem;
+  font-weight:450;
+  line-height: 3rem;
+}
+
+
+
+
+footer {
+  color: #111;
+  text-align: center;
+  font-size: 10px;
+  padding-bottom: 20px;
+}
+
+/* =========================
+   Resume Page
+   ========================= */
+
+.resume {
+  padding: 7rem 2rem;          /* clears fixed navbar */
+  max-width: 1100px;
+  margin: auto;
+  background: #f4f4f4;         /* contrast against PDF */
+  min-height: 100vh;
+}
+
+.resume h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #111;
+}
+
+.pdf-wrapper {
+  background: #111;            /* frame */
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.pdf-wrapper object {
+  width: 100%;
+  height: 90vh;
+  display: block;
+  background: #ffffff;         /* prevents white bleed */
+  border-radius: 4px;
+}
+
+
+
+
+
+
